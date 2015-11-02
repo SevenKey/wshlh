@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />		<!-- 开发模式 -->
+	<constant name="struts.action.extension" value="action" />		<!-- 后缀名为.action -->
+	<constant name="struts.ui.theme" value="simple" />		<!-- 配置主题为simple -->
+
+	<package name="RoleAction" namespace="/" extends="struts-default">
+		<action name="role_*" class="role" method="{1}">
+			<result name="list">WEB-INF/jsp/roleaction/list.jsp</result>
+			<result name="saveUI">WEB-INF/jsp/roleaction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">role_list</result>
+		</action>
+	</package>
+	
+	<package name="DepartmentAction" namespace="/" extends="struts-default">
+		<action name="department_*" class="department" method="{1}">
+			<result name="list">WEB-INF/jsp/departmentaction/list.jsp</result>
+			<result name="saveUI">WEB-INF/jsp/departmentaction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">department_list</result>
+		</action>
+	</package>
+
+</struts>
